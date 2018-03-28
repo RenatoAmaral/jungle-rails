@@ -59,6 +59,19 @@ main section.categories-show {
           opacity: 1.0;
         }
       }
+      aside.sold{
+        background-color: #df9998;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 20px;
+        color: white;
+        font-family: sans-serif;
+        font-weight: 300;
+        font-size: 1.2em;
+        left: 0;
+        padding: 6px;
+        width: 40%;
+      }
 
     }
   }
@@ -72,5 +85,3 @@ main section.products-show {
     }
   }
 }
-
-
