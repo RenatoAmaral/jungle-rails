@@ -2,13 +2,17 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  # resource :login, only: [:create]
+  # resource :logout, only: [:destroy]
 
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  # resource :signup, only: [:new]
+  # resources :user, only: [:create]
+  get '/signup', to: 'users#new'
+  post '/users', to: 'users#create'
 
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
