@@ -1,0 +1,13 @@
+
+** JUNGLE | RECEIPT FOR ORDER NO. <%= @order.id %>
+------------------------------------------------------------
+Thank you for your order! We will get to it as soon as possible. Here is a summary of your order:
+
+PRODUCT         ||| QUANTITY | TOTAL PRICE | PRICE EACH
+------------------------------------------------------------
+<% @items.each do |item| %>
+<%= item.product.name %>            ||| <%= item.product.description %> | <%= item.quantity %> | <%= humanized_money_with_symbol (item.total_price_cents / 100) %> | <%= humanized_money_with_symbol (item.item_price_cents / 100) %></h4>
+------------------------------------------------------------
+<% end %>
+
+Thanks for your order. Don't hesitate to contact us @ ordersupport@jungle.com for assistance.

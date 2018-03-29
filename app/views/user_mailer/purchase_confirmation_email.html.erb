@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Jungle | Receipt for Order No. <%= @order.id %></h1>
+    <p>
+      Thank you for your order! We will get to it as soon as possible.
+      Here is a summary of your order:
+    </p>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Quantity</th>
+          <th>Total Price</th>
+          <th>Price Each</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @items.each do |item| %>
+          <tr>
+          <td colspan="2">
+            <h4><%= item.product.name %></h4>
+            <p><%= item.product.description %></p>
+          </td>
+          <td>
+            <h4><%= item.quantity %></h4>
+          </td>
+          <td>
+            <h4><%= humanized_money_with_symbol (item.total_price_cents / 100) %></h4>
+          </td>
+          <td>
+          <h4><%= humanized_money_with_symbol (item.item_price_cents / 100) %></h4>
+        </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <p>Thanks for your order. Don't hesitate to contact us @ ordersupport@jungle.com for assistance.</p>
+  </body>
+</html>
