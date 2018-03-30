@@ -160,9 +160,19 @@ cat1.products.find(3).reviews.create!({
 })
 
 cat1.products.find(4).reviews.create!({
-  user_id: 2,
+  user_id: 3,
   description: "Garbage!! Don't buy it!!!",
   rating: 0
+})
+cat1.products.find(4).reviews.create!({
+  user_id: 2,
+  description: "Poor quality",
+  rating: 2
+})
+cat1.products.find(4).reviews.create!({
+  user_id: 1,
+  description: "Okay",
+  rating: 3
 })
 
 puts "DONE!"
