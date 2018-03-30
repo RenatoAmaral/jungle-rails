@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
     redirect_to product_path(@product)
   end
 
+
   private
 
   def review_params

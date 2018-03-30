@@ -6,6 +6,10 @@ class Review < ActiveRecord::Base
   validates :description, presence: true
   validates :rating, presence: true
 
+  def blank_stars
+    5 - rating.to_i
+  end
+
 end
 # Validetions
 # Is a review without a product (parent) valid?
