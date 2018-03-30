@@ -45,10 +45,10 @@
             <dd><%= review.created_at %></dd>
             <dt>
               <% if current_user.present? && review.user_id == current_user.id %>
-                <%= form_for [review.product, review], method: :delete  do |f| %>
-                  <%= f.button 'Delete'%>
+                <%= form_for [@product, review], method: :delete  do |f| %>
+                  <%= f.button "Delete"%>
                 <% end %>
-              <% end %>  
+              <% end %>
             </dt>
           </dl>
         <% end %>
