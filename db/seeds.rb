@@ -39,7 +39,7 @@ cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel1.jpg'),
-  quantity: 10,
+  quantity: 0,
   price: 64.99
 })
 
@@ -55,7 +55,7 @@ cat1.products.create!({
   name:  'Hipster Hat',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel3.jpg'),
-  quantity: 4,
+  quantity: 0,
   price: 34.49
 })
 
@@ -132,5 +132,37 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+
+puts "DONE!"
+
+# REVIEWS
+
+puts "Re-creating Reviews..."
+
+Review.destroy_all
+
+cat1.products.find(1).reviews.create!({
+  user_id: 1,
+  description: "I really like this product!",
+  rating: 5
+})
+
+cat1.products.find(2).reviews.create!({
+  user_id: 2,
+  description: "I don't like it!",
+  rating: 0
+})
+
+cat1.products.find(3).reviews.create!({
+  user_id: 2,
+  description: "I liked this product!",
+  rating: 4
+})
+
+cat1.products.find(4).reviews.create!({
+  user_id: 2,
+  description: "Garbage!! Don't buy it!!!",
+  rating: 0
+})
 
 puts "DONE!"
